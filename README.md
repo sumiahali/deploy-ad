@@ -96,11 +96,8 @@ This tutorial will guide you through installing and configuring Active Directory
 *(Already done)*
 - *Why?:* A restart applies the new DNS settings so Client-1 can communicate with DC-1.
 3. Log in to **Client-1** as the **local admin (labuser)**.
-  <p>
-    
-  </p>
 4. Join Client-1 to the domain:
-- Right-click **This PC → Properties → Change settings**.
+- ????????
 - Enter the domain name: `mydomain.com`.
 - Restart when prompted.
 - *Why?:* Joining the domain allows the computer to be centrally managed by the Domain Controller. Users can now log in using domain accounts.
@@ -119,20 +116,54 @@ This tutorial will guide you through installing and configuring Active Directory
   <img width="508" height="488" alt="image" src="https://github.com/user-attachments/assets/697535ef-6e57-44f5-a12a-2284ee853c43" />
 </p>
 2. Open **ADUC** and confirm that **Client-1** appears under the Computers container.
-- *Reasoning:* This verifies that the domain join worked correctly and that Client-1 is now registered in Active Directory.
+- *Why?:* This verifies that the domain join worked correctly and that Client-1 is now registered in Active Directory.
 <p>
   <img width="1496" height="1044" alt="image" src="https://github.com/user-attachments/assets/4d47ff8d-58da-4dbe-a583-cf2848f495d6" />
 </p>
----
-
-## 5. Organize Client Machines
-1. In ADUC, create a new OU:
+3. Create a new OU:
 - `_CLIENTS`
 <p>
   <img width="866" height="752" alt="image" src="https://github.com/user-attachments/assets/1812b896-9a93-4dfb-a731-17aa514cce79" />
 </p>
-2. Move **Client-1** into the `_CLIENTS` OU.
-- *Reasoning:* Just like users, computers should be organized in OUs. This makes it easier to apply Group Policies to all client machines later.
+4. Move **client-1** into the `_CLIENTS` OU.
+- *Why?:* Organizing client computers into their own OU makes it easier to apply policies later.
 <p>
   <img width="1496" height="1054" alt="image" src="https://github.com/user-attachments/assets/049bd1c8-d322-4ce0-9972-6492991acec8" />
+</p>
+---
+
+### 5. Setup Remote Desktop for non-administrative users on Client-1
+
+1. Log into client-1 as:
+   mydomain.com\jane_admin
+2. Open **System Properties → Remote Desktop**.
+<p>
+   <img width="2040" height="1268" alt="image" src="https://github.com/user-attachments/assets/c5ed4727-d0b0-4da9-a2c8-a2b6f650240c" />
+</p>
+3. Allow access for:
+- `Domain Users`
+<p>
+   <img width="750" height="660" alt="image" src="https://github.com/user-attachments/assets/bbdc8a84-99f4-413d-96bd-e9756c64e195" />
+   <img width="906" height="502" alt="image" src="https://github.com/user-attachments/assets/47dbb35d-5f29-4bd5-8c63-aa5e0729c2b6" />
+</p>
+
+---
+
+### 6. Bulk User Creation with PowerShell
+
+1. On **dc-1**, log in as `jane_admin`.
+2. Open **PowerShell ISE** as Administrator.
+3. Paste this [script](https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1) into a new file and run: 
+<p>
+   <img width="2560" height="1566" alt="image" src="https://github.com/user-attachments/assets/67533531-22c5-4d42-9c5e-7163e5a313f7" />
+   <img width="2558" height="1570" alt="image" src="https://github.com/user-attachments/assets/9e76bd3d-c853-4ab0-acb3-637549e4b252" />
+</p>
+4. In ADUC, verify that new accounts are created in the _EMPLOYEES OU.
+<p>
+   <img width="1432" height="1672" alt="image" src="https://github.com/user-attachments/assets/452e8ddb-15c8-4f67-8507-96879433388b" />
+</p>
+5. Attempt to log into Client-1 with one of the new accounts.
+<p>
+   <img width="974" height="1450" alt="image" src="https://github.com/user-attachments/assets/ce82d42c-bec0-4a90-ab1d-fcf45d6b4e4b" />
+   <img width="420" height="66" alt="image" src="https://github.com/user-attachments/assets/97b025b7-53d2-4029-9e48-e10ddb3e791b" />
 </p>
