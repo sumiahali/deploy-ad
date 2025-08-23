@@ -28,33 +28,33 @@ This tutorial will guide you through installing and configuring Active Directory
 2. Install **Active Directory Domain Services (AD DS)**.
    - *Why?:* AD DS is the Windows role that allows the server to function as a Domain Controller, managing authentication, users, groups, and policies.
 <p>
-  <img width="2636" height="1418" alt="image" src="https://github.com/user-attachments/assets/3a03d2b1-a3b8-45f4-b0d6-77ad1d3b6031" />
-  <img width="1566" height="1112" alt="image" src="https://github.com/user-attachments/assets/2133890e-2cee-49e5-8486-b9061df31b5b" />
-  <img width="1548" height="1110" alt="image" src="https://github.com/user-attachments/assets/b7634c96-7622-4123-b3a9-a5463f4130ce" />
-  <img width="1634" height="1106" alt="image" src="https://github.com/user-attachments/assets/7e082e89-debd-4707-8e66-6bbb811902b3" />
-  <img width="1534" height="1096" alt="image" src="https://github.com/user-attachments/assets/f3dcc8eb-1f4b-4132-b98a-56250d728a87" />
+  <img width="1318" height="709" alt="image" src="https://github.com/user-attachments/assets/3a03d2b1-a3b8-45f4-b0d6-77ad1d3b6031" />
+  <img width="783" height="556" alt="image" src="https://github.com/user-attachments/assets/2133890e-2cee-49e5-8486-b9061df31b5b" />
+  <img width="774" height="555" alt="image" src="https://github.com/user-attachments/assets/b7634c96-7622-4123-b3a9-a5463f4130ce" />
+  <img width="817" height="553" alt="image" src="https://github.com/user-attachments/assets/7e082e89-debd-4707-8e66-6bbb811902b3" />
+  <img width="767" height="548" alt="image" src="https://github.com/user-attachments/assets/f3dcc8eb-1f4b-4132-b98a-56250d728a87" />
 </p>
 3. Promote the server as a **Domain Controller**:
    - Create a new forest: `mydomain.com`.
    - *Why?:* A “forest” is the top-level container for Active Directory. Since this is the first DC, it must create a new forest and domain namespace.
 <p>
-  <img width="2576" height="1354" alt="image" src="https://github.com/user-attachments/assets/f011ccd7-e339-4065-b2a2-2a4dd7cd4e49" />
-  <img width="1514" height="1116" alt="image" src="https://github.com/user-attachments/assets/6dec1b11-fb0d-4f65-b063-f7acd3652118" />
-  <img width="1518" height="1118" alt="image" src="https://github.com/user-attachments/assets/1b75c779-692e-430f-a569-bd4849b846a8" />
-  <img width="1392" height="1028" alt="image" src="https://github.com/user-attachments/assets/724894b7-1d3f-4813-af2b-26accc0da0c9" />
-  <img width="1358" height="362" alt="image" src="https://github.com/user-attachments/assets/8f348608-57e0-4cc4-969f-55253a49ca70" />
+  <img width="1288" height="677" alt="image" src="https://github.com/user-attachments/assets/f011ccd7-e339-4065-b2a2-2a4dd7cd4e49" />
+  <img width="757" height="558" alt="image" src="https://github.com/user-attachments/assets/6dec1b11-fb0d-4f65-b063-f7acd3652118" />
+  <img width="759" height="559" alt="image" src="https://github.com/user-attachments/assets/1b75c779-692e-430f-a569-bd4849b846a8" />
+  <img width="696" height="514" alt="image" src="https://github.com/user-attachments/assets/724894b7-1d3f-4813-af2b-26accc0da0c9" />
+  <img width="679" height="181" alt="image" src="https://github.com/user-attachments/assets/8f348608-57e0-4cc4-969f-55253a49ca70" />
 
 </p>
 4. Restart DC-1 and Log back in as: mydomain.com\labuser
 <p>
-  <img width="2876" height="1718" alt="image" src="https://github.com/user-attachments/assets/a24e8fc9-067a-4db3-8283-d837f80e169b" />
+  <img width="1438" height="859" alt="image" src="https://github.com/user-attachments/assets/a24e8fc9-067a-4db3-8283-d837f80e169b" />
 </p>
 
 ## 2. Create Organizational Units (OUs) and Admin Account
 1. Open **Active Directory Users and Computers (ADUC)**.
 <p>
-  <img width="1184" height="1168" alt="image" src="https://github.com/user-attachments/assets/af54bacf-6428-4cf8-b373-fe2015ff3b0d" />
-  <img width="1500" height="1056" alt="image" src="https://github.com/user-attachments/assets/69b5e6c7-1154-4535-bb37-21ee98f158c5" />
+  <img width="592" height="584" alt="image" src="https://github.com/user-attachments/assets/af54bacf-6428-4cf8-b373-fe2015ff3b0d" />
+  <img width="750" height="528" alt="image" src="https://github.com/user-attachments/assets/69b5e6c7-1154-4535-bb37-21ee98f158c5" />
 </p>
 2. Create the following OUs:
 - `_EMPLOYEES`
@@ -138,7 +138,7 @@ This tutorial will guide you through installing and configuring Active Directory
    mydomain.com\jane_admin
 2. Open **System Properties → Remote Desktop**.
 <p>
-   <img width="2040" height="1268" alt="image" src="https://github.com/user-attachments/assets/c5ed4727-d0b0-4da9-a2c8-a2b6f650240c" />
+   <img width="1020" height="634" alt="image" src="https://github.com/user-attachments/assets/c5ed4727-d0b0-4da9-a2c8-a2b6f650240c" />
 </p>
 3. Allow access for:
 - `Domain Users`
@@ -155,8 +155,8 @@ This tutorial will guide you through installing and configuring Active Directory
 2. Open **PowerShell ISE** as Administrator.
 3. Paste this [script](https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1) into a new file and run: 
 <p>
-   <img width="2560" height="1566" alt="image" src="https://github.com/user-attachments/assets/67533531-22c5-4d42-9c5e-7163e5a313f7" />
-   <img width="2558" height="1570" alt="image" src="https://github.com/user-attachments/assets/9e76bd3d-c853-4ab0-acb3-637549e4b252" />
+   <img width="1280" height="783" alt="image" src="https://github.com/user-attachments/assets/67533531-22c5-4d42-9c5e-7163e5a313f7" />
+   <img width="1279" height="785" alt="image" src="https://github.com/user-attachments/assets/9e76bd3d-c853-4ab0-acb3-637549e4b252" />
 </p>
 4. In ADUC, verify that new accounts are created in the _EMPLOYEES OU.
 <p>
