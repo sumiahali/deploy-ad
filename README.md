@@ -28,17 +28,17 @@ This tutorial will guide you through installing and configuring Active Directory
 2. Install **Active Directory Domain Services (AD DS)**.
    - *Why?:* AD DS is the Windows role that allows the server to function as a Domain Controller, managing authentication, users, groups, and policies.
 <p>
-  <img width="1318" height="709" alt="image" src="https://github.com/user-attachments/assets/3a03d2b1-a3b8-45f4-b0d6-77ad1d3b6031" />
-  <img width="783" height="556" alt="image" src="https://github.com/user-attachments/assets/2133890e-2cee-49e5-8486-b9061df31b5b" />
-  <img width="774" height="555" alt="image" src="https://github.com/user-attachments/assets/b7634c96-7622-4123-b3a9-a5463f4130ce" />
-  <img width="817" height="553" alt="image" src="https://github.com/user-attachments/assets/7e082e89-debd-4707-8e66-6bbb811902b3" />
-  <img width="767" height="548" alt="image" src="https://github.com/user-attachments/assets/f3dcc8eb-1f4b-4132-b98a-56250d728a87" />
+  <img width="659" height="354" alt="image" src="https://github.com/user-attachments/assets/3a03d2b1-a3b8-45f4-b0d6-77ad1d3b6031" />
+  <img width="587" height="417" alt="image" src="https://github.com/user-attachments/assets/2133890e-2cee-49e5-8486-b9061df31b5b" />
+  <img width="581" height="416" alt="image" src="https://github.com/user-attachments/assets/b7634c96-7622-4123-b3a9-a5463f4130ce" />
+  <img width="612" height="415" alt="image" src="https://github.com/user-attachments/assets/7e082e89-debd-4707-8e66-6bbb811902b3" />
+  <img width="575" height="411" alt="image" src="https://github.com/user-attachments/assets/f3dcc8eb-1f4b-4132-b98a-56250d728a87" />
 </p>
 3. Promote the server as a **Domain Controller**:
    - Create a new forest: `mydomain.com`.
    - *Why?:* A “forest” is the top-level container for Active Directory. Since this is the first DC, it must create a new forest and domain namespace.
 <p>
-  <img width="1288" height="677" alt="image" src="https://github.com/user-attachments/assets/f011ccd7-e339-4065-b2a2-2a4dd7cd4e49" />
+  <img width="659" height="354" alt="image" src="https://github.com/user-attachments/assets/f011ccd7-e339-4065-b2a2-2a4dd7cd4e49" />
   <img width="757" height="558" alt="image" src="https://github.com/user-attachments/assets/6dec1b11-fb0d-4f65-b063-f7acd3652118" />
   <img width="759" height="559" alt="image" src="https://github.com/user-attachments/assets/1b75c779-692e-430f-a569-bd4849b846a8" />
   <img width="696" height="514" alt="image" src="https://github.com/user-attachments/assets/724894b7-1d3f-4813-af2b-26accc0da0c9" />
@@ -95,7 +95,7 @@ This tutorial will guide you through installing and configuring Active Directory
 - Go to **System → About → Advanced System Settings**
 - In System Properties → Computer Name, click Change….
 - Select Domain and enter the domain name: `mydomain.com`.
-- Enter domain credentials (e.g., mydomain\jane_admin).
+- Enter domain credentials (e.g., mydomain.com\jane_admin).
 - Restart when prompted.
 <p>
   <img width="470" height="371" alt="image" src="https://github.com/user-attachments/assets/d02ffd0c-6bc8-4979-ace2-2c4839d008f1" />
