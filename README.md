@@ -88,22 +88,18 @@ This tutorial will guide you through installing and configuring Active Directory
   <img width="868" height="468" alt="image" src="https://github.com/user-attachments/assets/cf6b5e8f-4a7b-4654-aa37-a6acaa8c026e" />
 </p>
 
-## 3. Configure Client-1 for the Domain
-1. From the **Azure Portal**, set Client-1’s DNS settings to the **Private IP of the DC**.  
-*(Already done)*
-- *Why?:* Domain-joined machines rely on the Domain Controller’s DNS to locate and authenticate to the domain. If DNS is not set to the DC, domain join will fail.
-2. Restart Client-1 from the Azure Portal.  
-*(Already done)*
-- *Why?:* A restart applies the new DNS settings so Client-1 can communicate with DC-1.
-3. Log in to **Client-1** as the **local admin (labuser)**.
-4. Join Client-1 to the domain:
-- ????????
-- Enter the domain name: `mydomain.com`.
-- Restart when prompted.
+## 3. Configure client-1 for the Domain
+1. Log in to **client-1** as the **local admin (labuser)**.
+2. Join client-1 to the domain:
 - *Why?:* Joining the domain allows the computer to be centrally managed by the Domain Controller. Users can now log in using domain accounts.
+- Go to **System → About → Advanced System Settings**
+- In System Properties → Computer Name, click Change….
+- Select Domain and enter the domain name: `mydomain.com`.
+- Enter domain credentials (e.g., mydomain\jane_admin).
+- Restart when prompted.
 <p>
-  <img width="1882" height="1486" alt="image" src="https://github.com/user-attachments/assets/d02ffd0c-6bc8-4979-ace2-2c4839d008f1" />
-  <img width="824" height="934" alt="image" src="https://github.com/user-attachments/assets/c366c98e-272c-4ee6-8161-2833d02cbad1" />
+  <img width="470" height="371" alt="image" src="https://github.com/user-attachments/assets/d02ffd0c-6bc8-4979-ace2-2c4839d008f1" />
+  <img width="640" height="735" alt="image" src="https://github.com/user-attachments/assets/b3eb60e3-cfe2-4291-974f-75a71954e61e" />
   <img width="632" height="774" alt="image" src="https://github.com/user-attachments/assets/9bc21a4d-eb74-4225-9124-ab52dfa7e42d" />
   <img width="896" height="716" alt="image" src="https://github.com/user-attachments/assets/eb1be846-50aa-404a-98a3-5261f016cadd" />
   <img width="590" height="298" alt="image" src="https://github.com/user-attachments/assets/198d9445-6cae-4a2a-908c-8fb50874dc3a" />
@@ -118,7 +114,7 @@ This tutorial will guide you through installing and configuring Active Directory
 2. Open **ADUC** and confirm that **Client-1** appears under the Computers container.
 - *Why?:* This verifies that the domain join worked correctly and that Client-1 is now registered in Active Directory.
 <p>
-  <img width="1496" height="1044" alt="image" src="https://github.com/user-attachments/assets/4d47ff8d-58da-4dbe-a583-cf2848f495d6" />
+  <img width="748" height="522" alt="image" src="https://github.com/user-attachments/assets/4d47ff8d-58da-4dbe-a583-cf2848f495d6" />
 </p>
 3. Create a new OU:
 - `_CLIENTS`
@@ -128,7 +124,7 @@ This tutorial will guide you through installing and configuring Active Directory
 4. Move **client-1** into the `_CLIENTS` OU.
 - *Why?:* Organizing client computers into their own OU makes it easier to apply policies later.
 <p>
-  <img width="1496" height="1054" alt="image" src="https://github.com/user-attachments/assets/049bd1c8-d322-4ce0-9972-6492991acec8" />
+  <img width="748" height="527" alt="image" src="https://github.com/user-attachments/assets/049bd1c8-d322-4ce0-9972-6492991acec8" />
 </p>
 ---
 
@@ -155,15 +151,15 @@ This tutorial will guide you through installing and configuring Active Directory
 2. Open **PowerShell ISE** as Administrator.
 3. Paste this [script](https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1) into a new file and run: 
 <p>
-   <img width="1280" height="783" alt="image" src="https://github.com/user-attachments/assets/67533531-22c5-4d42-9c5e-7163e5a313f7" />
-   <img width="1279" height="785" alt="image" src="https://github.com/user-attachments/assets/9e76bd3d-c853-4ab0-acb3-637549e4b252" />
+   <img width="640" height="391" alt="image" src="https://github.com/user-attachments/assets/67533531-22c5-4d42-9c5e-7163e5a313f7" />
+   <img width="640" height="393" alt="image" src="https://github.com/user-attachments/assets/9e76bd3d-c853-4ab0-acb3-637549e4b252" />
 </p>
 4. In ADUC, verify that new accounts are created in the _EMPLOYEES OU.
 <p>
-   <img width="1432" height="1672" alt="image" src="https://github.com/user-attachments/assets/452e8ddb-15c8-4f67-8507-96879433388b" />
+   <img width="716" height="836" alt="image" src="https://github.com/user-attachments/assets/452e8ddb-15c8-4f67-8507-96879433388b" />
 </p>
 5. Attempt to log into Client-1 with one of the new accounts.
 <p>
-   <img width="974" height="1450" alt="image" src="https://github.com/user-attachments/assets/ce82d42c-bec0-4a90-ab1d-fcf45d6b4e4b" />
+   <img width="487" height="725" alt="image" src="https://github.com/user-attachments/assets/ce82d42c-bec0-4a90-ab1d-fcf45d6b4e4b" />
    <img width="420" height="66" alt="image" src="https://github.com/user-attachments/assets/97b025b7-53d2-4029-9e48-e10ddb3e791b" />
 </p>
